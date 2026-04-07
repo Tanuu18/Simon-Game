@@ -8,13 +8,16 @@ let btns=["yellow","red","blue","green"];
 
 let h2=document.querySelector("h2");
 
-document.addEventListener("keypress",function(){
-            if(started==false){
-                console.log("game is started");
-                started=true;
-                levelup();
-            }
-});
+function startHandler() {
+    if (started == false) {
+        console.log("game is started");
+        started = true;
+        levelup();
+    }
+}
+
+document.addEventListener("keypress", startHandler);
+document.addEventListener("touchstart", startHandler);
 
 function gameFlash(btn){
     btn.classList.add("flash");
